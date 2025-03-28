@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Flask Hello World</title>
+    <script>
+        async function fetchMessage() {
+            const response = await fetch('/message');
+            const text = await response.text();
+            document.getElementById('output').innerText = text;
+        }
+    </script>
 </head>
 <body>
-    <h1>Hello, World! Ciao</h1>
-    <button onclick="alert('Button clicked!')">Click Me</button>
+    <button onclick="fetchMessage()">Clicca qui</button>
+    <p id="output"></p>
 </body>
 </html>
